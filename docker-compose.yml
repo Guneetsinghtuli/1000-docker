@@ -1,0 +1,13 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d
+    ports:
+      - 3000:3000
+    depends_on:
+      - node
+  node:
+    build: .
+    
